@@ -1,0 +1,10 @@
+{
+    "pesets": [
+        [
+            "@babel/preset-react",
+        {
+            "runtime": "automatic"
+        }
+        ]
+    ]
+}
