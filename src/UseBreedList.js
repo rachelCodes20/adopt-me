@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 
 const localCache = {};
 
-export default useBreedList = (animal) => {
+export default function useBreedList (animal) {
     const [breedList, setBreedList] = useState([]);
     //what is the state of the hook?
     const [status, setStatus] = useState('unLoaded');
     useEffect(() => {
          if(!animal){
              setBreedList([]);
-         }else if (breedList){
+         }else if (localCache[animal]){
             setBreedList(localCache[animal]);
          }else{
              requestBreedList();
@@ -25,7 +25,9 @@ export default useBreedList = (animal) => {
         localCache[animal] = json.breeds || [];
         setBreedList(localCache[animal]);
         setStatus('loaded');
+        
         }
         //whenever animal is updated, useEffect will run
     }, [animal]);
+    return [breedList, status]
 }

@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import Pet from "./Pet";
 const ANIMALS = ['bird','cat', 'dog', 'rabbit', 'reptile'];
-
+import useBreedList from './useBreedList';
 
 const SearchParams = () => {
     const [animal, setAnimal] = useState("");
     const [location, setLocation] = useState("");
     const [breed, setBreed] = useState("");
     const [pets, setPets] = useState([]);
-    const breeds = [];
+    const [breeds] = useBreedList(animal);
 
     useEffect(() => {
         requestPets();
     //square brackets tell UE when to rerender
-    //if you don't tell it when to rerun, it reruns after each render
+    //if not specified, reruns after each render
     //empty arr means render only once
     },[])// eslint-disable-line react-hooks/exhaustive-deps
 
