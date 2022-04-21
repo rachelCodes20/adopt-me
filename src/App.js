@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import SearchParams from './SearchParams';
 import Details from './Details';
 //babel will import jsx 
@@ -9,19 +9,23 @@ import Details from './Details';
     //subcomponents within it
 
 const App = () => {
-
     return (
-        <div>
-        {/* <h1>Adopt Me</h1> */}
-        <Router>
-             <Route path= "/details/:id">
-                 <Details />
-             </Route>
-             <Route path="/">
-                 <SearchParams />
-            </Route>
-        </Router>
-       
+        <div>  
+            <Router>
+                <header>
+                    <Link to="/">               
+                            <h1>Adopt Me</h1>
+                    </Link>    
+                </header>
+                <Switch>
+                     <Route path= "/details/:id">
+                        <Details />
+                    </Route>
+                    <Route path="/">
+                        <SearchParams />
+                    </Route>
+                </Switch>
+            </Router>
     </div>
     )
 }
