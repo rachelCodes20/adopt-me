@@ -1,6 +1,6 @@
 
 const Details = () => {
-    return <h1>Details</h1>
+    return <h2>Why won't you render!</h2>
     
 }
 

@@ -4,9 +4,10 @@ import Pet from "./Pet";
      return (
          <div className="search" >
              {
-             !pets.length ? <h2> No Pets Found</h2> : 
+             !pets.length ? (<h2> No Pets Found</h2>) : 
              (
-                pets.map(pet => (
+                pets.map((pet) => {
+                return (
                 <Pet 
                 name={pet.name} 
                 animal={pet.animal}
@@ -14,8 +15,10 @@ import Pet from "./Pet";
                 key={pet.id}
                 images={pet.images}
                 location={`${pet.city}, ${pet.state}`}
+                id={pet.id}
                 />
-                    )
+                )
+            }
                 )
             )
              
