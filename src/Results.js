@@ -18,9 +18,8 @@ import Pet from "./Pet";
                 id={pet.id}
                 />
                 )
-            }
-                )
-            )
+            })
+           )
              
              }
             {/* {pets.map(pet => (

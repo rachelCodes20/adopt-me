@@ -20,12 +20,14 @@ class Carousel extends Component {
                 <img src={images[active]} alt="animal"/>
                 <div className="carousel-smaller">
                     {images.map((photo, index) => {
+                        return ( 
                         <img 
                         key={photo}
                         src={photo}
                         className={index === active ? active : ""}
                         alt="animal-thumbnail"
                         />
+                        )
                     })}
                 </div>
             </div>
