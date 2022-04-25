@@ -10,7 +10,7 @@ import ThemeContext from './ThemeContext';
     //subcomponents within it
 
 const App = () => {
-const theme = useState('turquoise');
+const theme = useState('');
     return (
         <ThemeContext.Provider value={theme}>
               <div>  
