@@ -2,6 +2,7 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Carousel from './Carousel';
+import ErrorBoundary from './ErrorBoundary';
 
 class Details extends Component {
     //constructor not needed if assigning to state like so
@@ -49,4 +50,13 @@ class Details extends Component {
     }
 }
 //reactRouter info (props, etc) will be sent to route)
-export default withRouter(Details);
+const DetailsWithRouter =  withRouter(Details);
+
+export default function ErrorBoundaryWithRouter() {
+    return (    
+    <ErrorBoundary>
+        <DetailsWithRouter />
+    </ErrorBoundary>
+    )
+
+};

@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Pet from "./Pet";
 import Results from './Results';
 const ANIMALS = ['bird','cat', 'dog', 'rabbit', 'reptile'];
 import useBreedList from './useBreedList';
+import ThemeContext from './ThemeContext';
 
 const SearchParams = () => {
     const [animal, setAnimal] = useState("");
@@ -10,7 +11,7 @@ const SearchParams = () => {
     const [breed, setBreed] = useState("");
     const [pets, setPets] = useState([]);
     const [breeds] = useBreedList(animal);
-
+    const [theme] = useContext(ThemeContext)
     useEffect(() => {
         requestPets();
     //square brackets tell UE when to rerender
@@ -66,7 +67,7 @@ const SearchParams = () => {
                     ))}
                     </select>
                 </label>
-                <button>Submit</button>
+                <button style={{ backgroundColor: theme }}>Submit</button>
             </form>
             {/* if using curly braces after fat arrow, needs return statement! */}
           <Results pets={pets}/>
