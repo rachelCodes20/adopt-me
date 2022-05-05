@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from 'react';
-import Pet from "./Pet";
 import Results from './Results';
 const ANIMALS = ['bird','cat', 'dog', 'rabbit', 'reptile'];
 import useBreedList from './useBreedList';
